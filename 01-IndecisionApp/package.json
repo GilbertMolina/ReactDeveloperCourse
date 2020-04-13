@@ -1,0 +1,11 @@
+{
+  "name": "01-IndecisionApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gilbert Molina",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
