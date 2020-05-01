@@ -25,7 +25,6 @@ class AddOption extends React.Component {
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onHandleSubmit}>
-          <label>New option: </label>
           <input type="text" name="option" />
           <button>Add option</button>
         </form>
