@@ -1,21 +1,16 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class VisibilityToggle extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    visibility: false
+  };
 
-    this.state = {
-      visibility: false
-    };
-
-    this.onHandleVisibilityToggle = this.onHandleVisibilityToggle.bind(this);
-  }
-
-  onHandleVisibilityToggle() {
-    this.setState((prevState) => {
-      return {
-        visibility: !prevState.visibility
-      };
-    });
-  }
+  onHandleVisibilityToggle = () => {
+    this.setState((prevState) => ({
+      visibility: !prevState.visibility
+    }));
+  };
 
   render() {
     return (

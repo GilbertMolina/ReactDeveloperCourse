@@ -1,15 +1,30 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class Counter extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    count: 0,
+  };
 
-    this.state = {
+  onHandleAddOne = () => {
+    this.setState((prevState) => ({
+      count: prevState.count + 1,
+    }));
+  };
+
+  onHandleMinusOne = () => {
+    if (this.state.count !== 0) {
+      this.setState((prevState) => ({
+        count: prevState.count - 1,
+      }));
+    }
+  };
+
+  onHandleReset = () => {
+    this.setState(() => ({
       count: 0,
-    };
-
-    this.onHandleAddOne = this.onHandleAddOne.bind(this);
-    this.onHandleMinusOne = this.onHandleMinusOne.bind(this);
-    this.onHandleReset = this.onHandleReset.bind(this);
-  }
+    }));
+  };
 
   componentDidMount() {
     const stringCount = localStorage.getItem('count');
@@ -26,32 +41,6 @@ class Counter extends React.Component {
     if (prevState.count !== this.state.count) {
       localStorage.setItem('count', this.state.count);
     }
-  }
-
-  onHandleAddOne() {
-    this.setState((prevState) => {
-      return {
-        count: prevState.count + 1,
-      };
-    });
-  }
-
-  onHandleMinusOne() {
-    if (this.state.count !== 0) {
-      this.setState((prevState) => {
-        return {
-          count: prevState.count - 1,
-        };
-      });
-    }
-  }
-
-  onHandleReset() {
-    this.setState(() => {
-      return {
-        count: 0,
-      };
-    });
   }
 
   render() {
