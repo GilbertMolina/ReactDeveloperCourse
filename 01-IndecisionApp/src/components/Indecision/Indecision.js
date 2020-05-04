@@ -1,6 +1,5 @@
 import React from 'react';
-import { AddOption, Options, Action, Header } from '..'
-import OptionModal from "../OptionModal/OptionModal";
+import { AddOption, Options, Action, Header, OptionModal } from '..'
 
 class Indecision extends React.Component {
   state = {
@@ -77,19 +76,23 @@ class Indecision extends React.Component {
         <Header
           subtitle="Put your life in the hands of a Computer"
         />
-        <Action
-          hasOptions={this.state.options.length > 0}
-          handlePick={this.handlePick}
-        />
-        <Options
-          options={this.state.options}
-          hasOptions={this.state.options.length > 0}
-          handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOption={this.handleDeleteOption}
-        />
-        <AddOption
-          handleAddOption={this.handleAddOption}
-        />
+        <div className="container">
+          <Action
+            hasOptions={this.state.options.length > 0}
+            handlePick={this.handlePick}
+          />
+          <div className="widget">
+            <Options
+              options={this.state.options}
+              hasOptions={this.state.options.length > 0}
+              handleDeleteOptions={this.handleDeleteOptions}
+              handleDeleteOption={this.handleDeleteOption}
+            />
+            <AddOption
+              handleAddOption={this.handleAddOption}
+            />
+          </div>
+        </div>
         <OptionModal
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
