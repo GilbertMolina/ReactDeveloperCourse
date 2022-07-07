@@ -10,7 +10,7 @@
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dates": "^21.8.0",
